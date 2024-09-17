@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HodlInfo Clone</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header flex">
+            <div class="logo">
+                <img class="logo-png" src="./public/img/logo.png" alt="HodlInfo Logo" />
+            </div>
+            <div class="dropdowns flex g-10">
+                <div class="dropdown rounded-lg">
+                    <select id="supportedExchanges2" class="rounded-lg">
+                        <option value="INR">INR</option>
+                    </select>
+                </div>
+                <div class="dropdown rounded-lg">
+                    <select id="supportedExchanges1" class="rounded-lg">
+                        <option value="BTC">BTC</option>
+                        <option value="ETH">ETH</option>
+                        <option value="USDT">USDT</option>
+                        <option value="XRP">XRP</option>
+                        <option value="TRX">TRX</option>
+                        <option value="DASH">DASH</option>
+                    </select>
+                </div>
+                <div id="dynamicText" class="dropdown dynamic-text rounded-lg">
+                    <!-- dynamic text based on  supportedExchanges1. The value of supportedExchanges1 selected option would be the text of that div-->
+                </div>
+            </div>
+
+            <div class="header-rightside">
+                <button onclick="navigateTo('connect/telegram')">Connect Telegram</button>
+                <button id="theme-toggle" class="toggle-button"></button>
+            </div>
+        </div>
+
+        <!-- Hero section -->
+        <div class="header-hero">
+            <div>
+                <p class="text-center text-3xl text-gray">Best Price to Trade</p>
+            </div>
+            <div class="flex">
+                <div>
+                    <p class="coloured-text">0.1%</p>
+                    <p class="text-gray">5 Mins</p>
+                </div>
+                <div>
+                    <p class="coloured-text">0.96%</p>
+                    <p class="text-gray">1 Hour</p>
+                </div>
+                <div>
+                    <p id="averageLastPrice" class="avg"></p>
+                    <p class="text-gray">Average <span id="BitName"></span> net price including commission</p>
+                </div>
+                <div>
+                    <p class="coloured-text">2.73%</p>
+                    <p class="text-gray">1 Day</p>
+                </div>
+                <div>
+                    <p class="coloured-text">7.51%</p>
+                    <p class="text-gray">7 Days</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Content for connect telegram route -->
+    <main id="pageContent" class="page-content"></main>
+    <!-- Table content -->
+    <main id="tableContent" class="page-content">
+        <div class="container">
+            <table id="cryptoTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last</th>
+                        <th>Buy / Sell Price</th>
+                        <th>Volume</th>
+                        <th>Base Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic content from Node.js backend will populate here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="flex">
+        <div class="flex g-10 text-gray w-fit ">
+            <p class="text-sm">HodlInfo.com</p>
+            <p class="text-sm"> Copyright © 2019</p>
+        </div>
+        <button>Add hodlinfo to home screen</button>
+
+        <div class="text-gray w-fit">
+            <p class="w-fit text-sm">support</p>
+        </div>
+    </footer>
+
+    <!-- Js file -->
+    <script src="app.js">
+    </script>
+
+</body>
+</html>
